@@ -1,0 +1,71 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --page-bg: #f8f9fc;
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --card-bg: #ffffff;
+
+  --text-primary: #172033;
+  --text-secondary: #657087;
+
+  --accent: #7257e8;
+  --accent-secondary: #a855f7;
+
+  --border-color: #e8e9f0;
+
+  --gradient: linear-gradient(
+    135deg,
+    #7257e8,
+    #a855f7,
+    #ec4899
+  );
+}
+
+body.dark-theme {
+  --page-bg: #10111c;
+  --nav-bg: rgba(20, 21, 35, 0.94);
+  --card-bg: #1b1c2d;
+
+  --text-primary: #f3f4f9;
+  --text-secondary: #a3a7bb;
+
+  --accent: #a78bfa;
+  --accent-secondary: #c084fc;
+
+  --border-color: #303146;
+
+  --gradient: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #c084fc,
+    #ec4899
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}

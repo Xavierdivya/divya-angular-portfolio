@@ -1,0 +1,47 @@
+
+<nav class="navbar">
+  <div class="nav-container">
+
+    <!-- Logo -->
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      <span class="logo-bracket">&lt;</span>
+      Divya<span class="logo-highlight">X</span>
+      <span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <!-- Desktop and Mobile Navigation -->
+    <div class="nav-links" [class.open]="isMenuOpen">
+
+      <a
+        *ngFor="let link of navLinks"
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+        (click)="closeMenu()">
+        {{ link.label }}
+      </a>
+
+    </div>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+
+      <button
+        class="theme-btn"
+        (click)="toggleTheme()"
+        [attr.aria-label]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'">
+        {{ isDarkMode ? '☀' : '☾' }}
+      </button>
+
+      <button
+        class="menu-btn"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-label="Toggle navigation menu">
+        {{ isMenuOpen ? '✕' : '☰' }}
+      </button>
+
+    </div>
+
+  </div>
+</nav>
