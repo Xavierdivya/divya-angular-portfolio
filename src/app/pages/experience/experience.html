@@ -1,1 +1,129 @@
-<p>experience works!</p>
+
+<section class="experience-page">
+
+  <!-- Header -->
+  <div class="page-heading">
+    <p class="eyebrow">MY PROFESSIONAL JOURNEY</p>
+    <h1>Internship <span class="gradient-text">Experience</span></h1>
+    <p>
+      Learning through practical exposure, development activities,
+      and hands-on technical experience.
+    </p>
+  </div>
+
+  <!-- Experience Summary -->
+  <div class="experience-summary">
+    <div class="summary-icon">✦</div>
+    <div>
+      <h2>Growing Through Experience</h2>
+      <p>
+        Each internship has helped me strengthen my technical foundation,
+        understand development workflows, and become a better problem solver.
+      </p>
+    </div>
+  </div>
+
+  <!-- Internship Timeline -->
+  <section class="timeline-section">
+
+    <div class="section-heading">
+      <p class="eyebrow">MY INTERNSHIPS</p>
+      <h2>Where I've Learned and Contributed</h2>
+    </div>
+
+    <div class="timeline">
+
+      <article
+        class="timeline-item"
+        *ngFor="let internship of internships; let i = index">
+
+        <div class="timeline-marker">
+          {{ i + 1 }}
+        </div>
+
+        <div class="experience-card">
+
+          <div class="card-top">
+            <span class="internship-type">{{ internship.type }}</span>
+            <span class="duration">{{ internship.duration }}</span>
+          </div>
+
+          <h3>{{ internship.role }}</h3>
+
+          <h4>{{ internship.company }}</h4>
+
+          <p class="description">
+            {{ internship.description }}
+          </p>
+
+          <div class="responsibilities">
+            <h5>Key Activities</h5>
+
+            <ul>
+              <li *ngFor="let task of internship.responsibilities">
+                {{ task }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="technology-section">
+            <h5>Technologies & Areas</h5>
+
+            <div class="technology-tags">
+              <span *ngFor="let technology of internship.technologies">
+                {{ technology }}
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- Key Learnings -->
+  <section class="learning-section">
+
+    <div class="section-heading">
+      <p class="eyebrow">WHAT I HAVE GAINED</p>
+      <h2>Key Learnings</h2>
+    </div>
+
+    <div class="learning-grid">
+
+      <article
+        class="learning-card"
+        *ngFor="let item of keyLearnings">
+
+        <div class="learning-icon">✧</div>
+
+        <h3>{{ item.title }}</h3>
+
+        <p>{{ item.description }}</p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="experience-cta">
+
+    <h2>Interested in working together?</h2>
+
+    <p>
+      I'm always interested in learning, collaborating,
+      and exploring new opportunities.
+    </p>
+
+    <a routerLink="/contact" class="cta-button">
+      Get in Touch <span>↗</span>
+    </a>
+
+  </section>
+
+</section>

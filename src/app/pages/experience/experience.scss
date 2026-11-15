@@ -1,0 +1,373 @@
+
+:host {
+  display: block;
+}
+
+.experience-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 85px 5% 100px;
+}
+
+.page-heading {
+  text-align: center;
+  margin-bottom: 55px;
+
+  h1 {
+    margin-top: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  > p:last-child {
+    max-width: 650px;
+    margin: 15px auto 0;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Summary */
+
+.experience-summary {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(114, 87, 232, 0.09),
+      transparent
+    ),
+    var(--card-bg);
+
+  h2 {
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.35rem;
+  }
+
+  p {
+    margin-top: 9px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
+
+.summary-icon {
+  flex-shrink: 0;
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--gradient);
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Section heading */
+
+.timeline-section,
+.learning-section {
+  margin-top: 85px;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+
+  h2 {
+    margin-top: 10px;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+}
+
+/* Timeline */
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-left: 18px;
+  padding-left: 38px;
+  border-left: 2px solid var(--border-color);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 25px;
+  left: -53px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--page-bg);
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 800;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.experience-card {
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  background: var(--card-bg);
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(70, 50, 130, 0.08);
+  }
+
+  h3 {
+    margin-top: 20px;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.35rem;
+  }
+
+  h4 {
+    margin-top: 8px;
+    color: var(--accent);
+    font-size: 0.95rem;
+  }
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.internship-type {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: rgba(114, 87, 232, 0.12);
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.duration {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.description {
+  margin-top: 20px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.responsibilities,
+.technology-section {
+  margin-top: 25px;
+
+  h5 {
+    margin-bottom: 13px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+  }
+}
+
+.responsibilities ul {
+  padding-left: 20px;
+
+  li {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 0.87rem;
+    line-height: 1.6;
+  }
+}
+
+.technology-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  span {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+}
+
+/* Learnings */
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.learning-card {
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  background: var(--card-bg);
+  transition: 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+  }
+
+  h3 {
+    margin-top: 18px;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.05rem;
+  }
+
+  p {
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+}
+
+.learning-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: rgba(114, 87, 232, 0.12);
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+/* CTA */
+
+.experience-cta {
+  margin-top: 85px;
+  padding: 55px 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(114, 87, 232, 0.16),
+      transparent 60%
+    ),
+    var(--card-bg);
+  text-align: center;
+
+  h2 {
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  p {
+    max-width: 550px;
+    margin: 14px auto 25px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.9rem;
+  }
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 9px;
+  background: var(--gradient);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(114, 87, 232, 0.25);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-page {
+    padding-top: 60px;
+  }
+
+  .experience-summary {
+    align-items: flex-start;
+    padding: 22px;
+  }
+
+  .summary-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .timeline {
+    margin-left: 8px;
+    padding-left: 25px;
+  }
+
+  .timeline-marker {
+    left: -40px;
+    width: 27px;
+    height: 27px;
+  }
+
+  .experience-card {
+    padding: 22px;
+  }
+
+  .timeline-section,
+  .learning-section {
+    margin-top: 65px;
+  }
+}
