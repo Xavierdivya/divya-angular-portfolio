@@ -1,154 +1,300 @@
+
 <section class="learning-page">
 
-  <header class="page-heading">
-    <span class="section-label">MY ANGULAR JOURNEY</span>
-    <h1>Learning <span>Angular</span></h1>
+  <!-- Page Introduction -->
+  <header class="learning-hero">
+    <span class="hero-label">MY LEARNING JOURNEY</span>
+
+    <h1>
+      Learn. Build.
+      <span>Practise. Improve.</span>
+    </h1>
+
     <p>
-      Exploring Angular step by step through practical development,
-      reusable components, and hands-on examples.
+      A collection of my technical training, learning experiences,
+      hands-on exercises and continuous development as a software developer.
     </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>{{ hclTrainingDays.length }}+</strong>
+        <span>Training Days Documented</span>
+      </div>
+
+      <div class="hero-stat">
+        <strong>{{ learningItems.length.toString().padStart(2, '0') }}</strong>
+        <span>Learning Areas</span>
+      </div>
+
+      <div class="hero-stat">
+        <strong>∞</strong>
+        <span>Continuous Learning</span>
+      </div>
+    </div>
   </header>
 
-  <!-- Learning progress -->
-  <section class="learning-intro">
-    <div>
-      <span class="section-label">LEARN BY BUILDING</span>
-      <h2>Understanding Angular through this portfolio</h2>
-      <p>
-        This portfolio is built using Angular with an NgModule-based
-        architecture. Each page and reusable component helps me practise
-        concepts through implementation.
-      </p>
-    </div>
+  <!-- Category Filters -->
+  <section class="learning-explorer">
 
-    <div class="progress-card">
-      <span class="progress-number">{{ topics.length }}</span>
-      <span class="progress-caption">Concepts explored</span>
-      <div class="progress-track">
-        <div class="progress-fill" [ngStyle]="{ width: '100%' }"></div>
-      </div>
-      <span class="progress-note">Learning in progress</span>
-    </div>
-  </section>
-
-  <!-- Interactive two-way binding demo -->
-  <section class="binding-demo">
-    <div class="demo-heading">
-      <span class="section-label">INTERACTIVE DEMO</span>
-      <h2>Try Two-Way Data Binding</h2>
-      <p>
-        Change the name below. The preview updates immediately because
-        the input and component property are synchronised.
-      </p>
-    </div>
-
-    <div class="demo-content">
-      <label for="nameInput">Enter your name</label>
-
-      <input
-        id="nameInput"
-        type="text"
-        [(ngModel)]="userName"
-        placeholder="Type your name">
-
-      <div class="live-preview">
-        <span>Live preview</span>
-        <h3>Hello, {{ userName || 'Developer' }}!</h3>
-        <p>Your input is reflected in the component automatically.</p>
-      </div>
-
-      <button
-        type="button"
-        class="reset-button"
-        (click)="userName = 'Divya'">
-        Reset Demo
-      </button>
-    </div>
-  </section>
-
-  <!-- Concept filters -->
-  <section class="topics-section">
     <div class="section-heading">
       <div>
-        <span class="section-label">CONCEPT LIBRARY</span>
-        <h2>Angular Concepts</h2>
-        <p>Explore the concepts covered during my learning journey.</p>
+        <span class="section-label">EXPLORE</span>
+        <h2>My Learning Areas</h2>
+        <p>Explore my technical skills and practical learning activities.</p>
       </div>
     </div>
 
     <div class="category-filters">
       <button
         *ngFor="let category of categories"
-        type="button"
-        [ngClass]="{ 'active-filter': selectedCategory === category }"
+        [class.active]="selectedCategory === category"
         (click)="selectCategory(category)">
         {{ category }}
       </button>
     </div>
 
-    <div class="topics-grid">
-      <article class="topic-card" *ngFor="let topic of filteredTopics">
+    <!-- Learning Cards -->
+    <div class="learning-grid">
 
-        <div class="topic-card-top">
-          <span class="topic-category">{{ topic.category }}</span>
+      <article
+        class="learning-card"
+        *ngFor="let item of filteredItems">
 
-          <span
-            class="level-label"
-            [ngClass]="{
-              'beginner': topic.level === 'Beginner',
-              'intermediate': topic.level === 'Intermediate'
-            }">
-            {{ topic.level }}
+        <!-- Card Header -->
+        <div class="card-top">
+          <span class="category-label">
+            {{ item.category }}
+          </span>
+
+          <span class="status-label">
+            {{ item.status }}
           </span>
         </div>
 
-        <h3>{{ topic.title }}</h3>
+        <!-- Card Title -->
+        <h2>{{ item.title }}</h2>
 
-        <p class="topic-description">
-          {{ topic.description }}
+        <p class="learning-description">
+          {{ item.description }}
         </p>
 
-        <div class="code-example">
-          <span>Example</span>
-          <pre>{{ topic.example }}</pre>
-        </div>
+        <!-- HCLTech Training -->
+        <ng-container *ngIf="item.category === 'HCLTech Training'">
 
-        <div class="application">
-          <strong>Portfolio application</strong>
-          <p>{{ topic.application }}</p>
-        </div>
+          <div class="hcl-highlight">
+
+            <div class="hcl-highlight-text">
+              <span>TECHNICAL TRAINING</span>
+
+              <h3>Ongoing Learning Journey</h3>
+
+              <p>
+                An ongoing hands-on learning journey covering frontend,
+                backend, databases, programming fundamentals and modern
+                web technologies. New concepts, practical exercises and
+                projects are continuously added.
+              </p>
+
+              <div class="ongoing-status">
+                <span class="status-dot"></span>
+                Training In Progress
+              </div>
+            </div>
+
+            <div class="hcl-day-counter">
+              <strong>{{ hclTrainingDays.length }}+</strong>
+              <span>DAYS DOCUMENTED</span>
+            </div>
+
+          </div>
+
+          <!-- Technologies -->
+          <div class="tech-block">
+            <h4>Technology Stack</h4>
+
+            <div class="technology-list">
+              <span *ngFor="let tech of item.technologies">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Training Roadmap -->
+          <div class="roadmap-section">
+
+            <div class="roadmap-heading">
+              <div>
+                <span class="section-label">HCLTECH TRAINING</span>
+                <h3>Training Roadmap</h3>
+                <p>
+                  Explore my day-wise practical exercises and learning progress.
+                </p>
+              </div>
+
+              <span class="roadmap-count">
+                {{ hclTrainingDays.length }}+ DAYS
+              </span>
+            </div>
+
+            <!-- Documented Days Information -->
+            <div class="roadmap-progress">
+              <span>
+                {{ hclTrainingDays.length }} Days Documented · Training Ongoing
+              </span>
+            </div>
+
+            <!-- Expand / Collapse Button -->
+            <button
+              type="button"
+              class="roadmap-toggle"
+              (click)="toggleHclDays()"
+              [attr.aria-expanded]="showHclDays">
+
+              <span>
+                {{
+                  showHclDays
+                    ? 'Hide Training Days'
+                    : 'Explore Training Days'
+                }}
+              </span>
+
+              <span class="toggle-icon">
+                {{ showHclDays ? '−' : '+' }}
+              </span>
+
+            </button>
+
+            <!-- Individual Training Day Cards -->
+            <div
+              class="training-days-grid"
+              *ngIf="showHclDays">
+
+              <a
+                class="training-day-card"
+                *ngFor="let day of hclTrainingDays"
+                [href]="day.url"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <div class="day-top">
+                  <span class="day-number">
+                    DAY {{ day.day }}
+                  </span>
+
+                  <span class="day-arrow">↗</span>
+                </div>
+
+                <h4>{{ day.title }}</h4>
+
+                <!-- GitHub Folder Path -->
+                <div class="day-bottom">
+                  <span>{{ day.folder }}</span>
+                </div>
+
+                <span class="day-github-link">
+                  View on GitHub ↗
+                </span>
+
+              </a>
+
+            </div>
+
+            <!-- More Days Message -->
+            <div class="more-days-message">
+              <div class="more-days-icon">+</div>
+
+              <div>
+                <h4>More Days & Topics Coming...</h4>
+                <p>
+                  This training journey is still in progress.
+                  New days, exercises, concepts and projects will be
+                  continuously added as I continue learning.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Main Repository -->
+          <a
+            class="repository-link"
+            [href]="item.githubUrl"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <span>Explore Complete GitHub Repository</span>
+            <span>↗</span>
+
+          </a>
+
+        </ng-container>
+
+        <!-- Other Learning Categories -->
+        <ng-container *ngIf="item.category !== 'HCLTech Training'">
+
+          <!-- Technologies -->
+          <div class="tech-block">
+            <h4>Technologies & Tools</h4>
+
+            <div class="technology-list">
+              <span *ngFor="let tech of item.technologies">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Topics -->
+          <div class="topics-section">
+            <h4>Topics & Practice</h4>
+
+            <ul>
+              <li *ngFor="let topic of item.topics">
+                {{ topic }}
+              </li>
+            </ul>
+          </div>
+
+          <!-- Repository -->
+          <a
+            class="repository-link"
+            [href]="item.githubUrl"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <span>Explore Repository / Profile</span>
+            <span>↗</span>
+
+          </a>
+
+        </ng-container>
 
       </article>
+
     </div>
 
-    <p class="empty-message" *ngIf="filteredTopics.length === 0">
-      No concepts found in this category.
-    </p>
   </section>
 
-  <!-- Learning note -->
-  <section class="learning-note">
-    <h2>Still learning, always improving.</h2>
+  <!-- Learning Philosophy -->
+  <section class="learning-philosophy">
+
+    <span class="section-label">MY APPROACH</span>
+
+    <h2>Progress Through Practice</h2>
+
     <p>
-      My goal is to strengthen my Angular fundamentals by building
-      practical applications and understanding how each concept works.
+      I believe consistent practice and building real-world projects
+      are essential for becoming a better developer. I continuously
+      explore new technologies, strengthen my fundamentals and apply
+      what I learn through hands-on development.
     </p>
 
-    <button
-      type="button"
-      class="explanation-button"
-      (click)="toggleExplanation()">
-      {{ showExplanation ? 'Hide learning note' : 'Why Angular?' }}
-    </button>
+    <a
+      href="https://github.com/Xavierdivya"
+      target="_blank"
+      rel="noopener noreferrer">
+      Visit My GitHub Profile ↗
+    </a>
 
-    <div class="explanation-content" *ngIf="showExplanation">
-      <p>
-        Angular provides a structured framework for building scalable
-        web applications. I am learning its component architecture,
-        TypeScript integration, routing, dependency injection, and
-        reusable UI patterns to develop maintainable applications.
-      </p>
-    </div>
   </section>
 
 </section>

@@ -22,8 +22,8 @@ export class Navbar implements OnInit {
     { label: 'Experience', path: '/experience' },
     { label: 'Projects', path: '/projects' },
     { label: 'Achievements', path: '/achievements' },
-    { label: 'Angular Learning', path: '/angular-learning' },
-    { label: 'Contact', path: '/contact' }
+    { label: 'Learning & Practice', path: '/angular-learning' },
+    { label: 'Contact', path: '/contact' },
   ];
 
   // Runs when the component is initialized

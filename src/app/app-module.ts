@@ -19,6 +19,8 @@ import { Contact } from './pages/contact/contact';
 import { ProjectCard } from './shared/project-card/project-card';
 
 import { FormsModule } from '@angular/forms';
+
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     App,
@@ -38,7 +40,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

@@ -15,7 +15,8 @@ export class Footer {
     { label: 'Experience', path: '/experience' },
     { label: 'Projects', path: '/projects' },
     { label: 'Achievements', path: '/achievements' },
-    { label: 'Contact', path: '/contact' }
+    { label: 'Contact', path: '/contact' },
+    { label: 'Learning & Practice', path: '/angular-learning' }
   ];
 
   socialLinks = [
