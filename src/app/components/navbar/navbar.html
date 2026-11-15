@@ -3,14 +3,22 @@
   <div class="nav-container">
 
     <!-- Logo -->
-    <a routerLink="/" class="logo" (click)="closeMenu()">
+    <a
+      routerLink="/"
+      class="logo"
+      (click)="closeMenu()"
+      aria-label="DivyaX - Home">
+
       <span class="logo-bracket">&lt;</span>
       Divya<span class="logo-highlight">X</span>
       <span class="logo-bracket">/&gt;</span>
+
     </a>
 
     <!-- Desktop and Mobile Navigation -->
-    <div class="nav-links" [class.open]="isMenuOpen">
+    <div
+      class="nav-links"
+      [class.open]="isMenuOpen">
 
       <a
         *ngFor="let link of navLinks"
@@ -18,27 +26,39 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: link.path === '/' }"
         (click)="closeMenu()">
+
         {{ link.label }}
+
       </a>
 
     </div>
 
-    <!-- Actions -->
+    <!-- Navigation Actions -->
     <div class="nav-actions">
 
+      <!-- Theme Toggle -->
       <button
+        type="button"
         class="theme-btn"
         (click)="toggleTheme()"
-        [attr.aria-label]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'">
+        [attr.aria-label]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'"
+        [attr.title]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'">
+
         {{ isDarkMode ? '☀' : '☾' }}
+
       </button>
 
+      <!-- Mobile Menu Toggle -->
       <button
+        type="button"
         class="menu-btn"
         (click)="toggleMenu()"
         [attr.aria-expanded]="isMenuOpen"
+        aria-controls="primary-navigation"
         aria-label="Toggle navigation menu">
+
         {{ isMenuOpen ? '✕' : '☰' }}
+
       </button>
 
     </div>

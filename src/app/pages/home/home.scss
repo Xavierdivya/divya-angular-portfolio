@@ -450,4 +450,23 @@
   .social-links {
     gap: 12px;
   }
+
+  .resume-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 9px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+  }
+}
 }

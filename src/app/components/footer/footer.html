@@ -1,1 +1,49 @@
-<p>footer works!</p>
+<footer class="site-footer">
+
+  <div class="footer-container">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <a routerLink="/" class="footer-logo">Divya<span>X</span></a>
+
+        <p>
+          Aspiring Software Developer passionate about building
+          practical applications and continuously learning new technologies.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+
+        <a *ngFor="let link of quickLinks" [routerLink]="link.path">
+          {{ link.label }}
+        </a>
+      </div>
+
+      <div class="footer-social">
+        <h3>Connect</h3>
+
+        <a
+          *ngFor="let social of socialLinks"
+          [href]="social.url"
+          target="_blank"
+          rel="noopener noreferrer">
+          {{ social.label }} ↗
+        </a>
+
+        <a href="mailto:xavierdivya01@gmail.com">
+          Email ↗
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {{ currentYear }} Divya X. All rights reserved.</p>
+      <p>Designed and developed with Angular.</p>
+    </div>
+
+  </div>
+
+</footer>
