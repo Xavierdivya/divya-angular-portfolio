@@ -1,1 +1,122 @@
-<p>achievements works!</p>
+<section class="achievements-page">
+
+  <!-- Page Heading -->
+  <header class="page-heading">
+    <span class="section-label">MILESTONES & RECOGNITION</span>
+
+    <h1>My <span>Achievements</span></h1>
+
+    <p>
+      Every achievement represents a learning experience, a challenge
+      overcome, and another step forward in my technical journey.
+    </p>
+  </header>
+
+  <!-- Coding Achievements -->
+  <section class="achievement-section">
+    <div class="section-heading">
+      <span class="section-icon">⌘</span>
+      <div>
+        <h2>Coding & Competitions</h2>
+        <p>My programming journey and competitive achievements.</p>
+      </div>
+    </div>
+
+    <div class="coding-grid">
+      <article
+        class="coding-card"
+        *ngFor="let achievement of codingAchievements">
+
+        <span class="platform-label">{{ achievement.platform }}</span>
+
+        <h3>{{ achievement.value }}</h3>
+
+        <h4>{{ achievement.title }}</h4>
+
+        <p>{{ achievement.description }}</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Hackathons -->
+  <section class="achievement-section">
+    <div class="section-heading">
+      <span class="section-icon">⚡</span>
+      <div>
+        <h2>Hackathons & Participation</h2>
+        <p>Experiences involving collaboration and innovation.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <article class="timeline-item" *ngFor="let event of hackathons">
+
+        <div class="timeline-dot"></div>
+
+        <div class="event-card">
+          <div class="event-top">
+            <span class="event-duration">{{ event.duration }}</span>
+          </div>
+
+          <h3>{{ event.name }}</h3>
+
+          <h4>{{ event.organizer }}</h4>
+
+          <p>{{ event.description }}</p>
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+  <!-- Workshops and Conference -->
+  <section class="achievement-section">
+    <div class="section-heading">
+      <span class="section-icon">✦</span>
+      <div>
+        <h2>Workshops & Technical Activities</h2>
+        <p>Learning beyond the classroom.</p>
+      </div>
+    </div>
+
+    <div class="activities-grid">
+      <article
+        class="activity-card"
+        *ngFor="let activity of activities">
+
+        <span class="activity-type">{{ activity.type }}</span>
+
+        <h3>{{ activity.title }}</h3>
+
+        <p>{{ activity.description }}</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Coding Profiles -->
+  <section class="profiles-section">
+    <h2>Explore My Coding Profiles</h2>
+
+    <p>
+      Visit my profiles to explore my coding practice and development work.
+    </p>
+
+    <div class="profiles-list">
+      <a
+        *ngFor="let profile of codingProfiles"
+        [href]="profile.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="profile-link">
+
+        <div>
+          <h3>{{ profile.name }}</h3>
+          <span>{{ profile.username }}</span>
+        </div>
+
+        <span class="profile-arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+</section>
