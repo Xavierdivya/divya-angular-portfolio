@@ -18,6 +18,7 @@ import { Contact } from './pages/contact/contact';
 
 import { ProjectCard } from './shared/project-card/project-card';
 
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     App,
@@ -36,7 +37,8 @@ import { ProjectCard } from './shared/project-card/project-card';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

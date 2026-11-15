@@ -1,1 +1,154 @@
-<p>angular-learning works!</p>
+<section class="learning-page">
+
+  <header class="page-heading">
+    <span class="section-label">MY ANGULAR JOURNEY</span>
+    <h1>Learning <span>Angular</span></h1>
+    <p>
+      Exploring Angular step by step through practical development,
+      reusable components, and hands-on examples.
+    </p>
+  </header>
+
+  <!-- Learning progress -->
+  <section class="learning-intro">
+    <div>
+      <span class="section-label">LEARN BY BUILDING</span>
+      <h2>Understanding Angular through this portfolio</h2>
+      <p>
+        This portfolio is built using Angular with an NgModule-based
+        architecture. Each page and reusable component helps me practise
+        concepts through implementation.
+      </p>
+    </div>
+
+    <div class="progress-card">
+      <span class="progress-number">{{ topics.length }}</span>
+      <span class="progress-caption">Concepts explored</span>
+      <div class="progress-track">
+        <div class="progress-fill" [ngStyle]="{ width: '100%' }"></div>
+      </div>
+      <span class="progress-note">Learning in progress</span>
+    </div>
+  </section>
+
+  <!-- Interactive two-way binding demo -->
+  <section class="binding-demo">
+    <div class="demo-heading">
+      <span class="section-label">INTERACTIVE DEMO</span>
+      <h2>Try Two-Way Data Binding</h2>
+      <p>
+        Change the name below. The preview updates immediately because
+        the input and component property are synchronised.
+      </p>
+    </div>
+
+    <div class="demo-content">
+      <label for="nameInput">Enter your name</label>
+
+      <input
+        id="nameInput"
+        type="text"
+        [(ngModel)]="userName"
+        placeholder="Type your name">
+
+      <div class="live-preview">
+        <span>Live preview</span>
+        <h3>Hello, {{ userName || 'Developer' }}!</h3>
+        <p>Your input is reflected in the component automatically.</p>
+      </div>
+
+      <button
+        type="button"
+        class="reset-button"
+        (click)="userName = 'Divya'">
+        Reset Demo
+      </button>
+    </div>
+  </section>
+
+  <!-- Concept filters -->
+  <section class="topics-section">
+    <div class="section-heading">
+      <div>
+        <span class="section-label">CONCEPT LIBRARY</span>
+        <h2>Angular Concepts</h2>
+        <p>Explore the concepts covered during my learning journey.</p>
+      </div>
+    </div>
+
+    <div class="category-filters">
+      <button
+        *ngFor="let category of categories"
+        type="button"
+        [ngClass]="{ 'active-filter': selectedCategory === category }"
+        (click)="selectCategory(category)">
+        {{ category }}
+      </button>
+    </div>
+
+    <div class="topics-grid">
+      <article class="topic-card" *ngFor="let topic of filteredTopics">
+
+        <div class="topic-card-top">
+          <span class="topic-category">{{ topic.category }}</span>
+
+          <span
+            class="level-label"
+            [ngClass]="{
+              'beginner': topic.level === 'Beginner',
+              'intermediate': topic.level === 'Intermediate'
+            }">
+            {{ topic.level }}
+          </span>
+        </div>
+
+        <h3>{{ topic.title }}</h3>
+
+        <p class="topic-description">
+          {{ topic.description }}
+        </p>
+
+        <div class="code-example">
+          <span>Example</span>
+          <pre>{{ topic.example }}</pre>
+        </div>
+
+        <div class="application">
+          <strong>Portfolio application</strong>
+          <p>{{ topic.application }}</p>
+        </div>
+
+      </article>
+    </div>
+
+    <p class="empty-message" *ngIf="filteredTopics.length === 0">
+      No concepts found in this category.
+    </p>
+  </section>
+
+  <!-- Learning note -->
+  <section class="learning-note">
+    <h2>Still learning, always improving.</h2>
+    <p>
+      My goal is to strengthen my Angular fundamentals by building
+      practical applications and understanding how each concept works.
+    </p>
+
+    <button
+      type="button"
+      class="explanation-button"
+      (click)="toggleExplanation()">
+      {{ showExplanation ? 'Hide learning note' : 'Why Angular?' }}
+    </button>
+
+    <div class="explanation-content" *ngIf="showExplanation">
+      <p>
+        Angular provides a structured framework for building scalable
+        web applications. I am learning its component architecture,
+        TypeScript integration, routing, dependency injection, and
+        reusable UI patterns to develop maintainable applications.
+      </p>
+    </div>
+  </section>
+
+</section>
