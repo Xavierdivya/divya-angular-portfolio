@@ -1,1 +1,161 @@
-<p>about works!</p>
+
+<section class="about-page">
+
+  <!-- Page Header -->
+  <div class="page-heading">
+    <p class="eyebrow">GET TO KNOW ME</p>
+    <h1>About <span class="gradient-text">Me</span></h1>
+    <p class="heading-description">
+      A little introduction to my journey, education, and technical background.
+    </p>
+  </div>
+
+  <!-- Introduction -->
+  <div class="about-intro">
+
+    <div class="intro-card">
+      <div class="intro-label">
+        <span class="accent-line"></span>
+        WHO I AM
+      </div>
+
+      <h2>
+        Curious mind.
+        <span class="gradient-text">Creative builder.</span>
+      </h2>
+
+      <p class="intro-description">
+        {{ introduction }}
+      </p>
+
+      <a routerLink="/contact" class="contact-link">
+        Let's connect <span>↗</span>
+      </a>
+    </div>
+
+    <div class="intro-side-card">
+      <div class="initials">DX</div>
+      <h3>Divya X</h3>
+      <p>Computer Science & Engineering</p>
+
+      <div class="side-divider"></div>
+
+      <div class="side-detail">
+        <span>Based in</span>
+        <strong>India</strong>
+      </div>
+
+      <div class="side-detail">
+        <span>Graduation</span>
+        <strong>2027</strong>
+      </div>
+
+      <div class="side-detail">
+        <span>Academic CGPA</span>
+        <strong>8.73</strong>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Education -->
+  <section class="content-section">
+
+    <div class="section-title">
+      <p class="eyebrow">MY ACADEMIC BACKGROUND</p>
+      <h2>Education</h2>
+    </div>
+
+    <div class="education-list">
+
+      <article
+        class="education-card"
+        *ngFor="let item of education">
+
+        <div class="timeline-marker"></div>
+
+        <div class="education-content">
+
+          <div class="education-top">
+            <span class="education-period">{{ item.period }}</span>
+            <span class="education-status">{{ item.status }}</span>
+          </div>
+
+          <h3>{{ item.degree }}</h3>
+
+          <p class="institution">{{ item.institution }}</p>
+
+          <div class="education-score">
+            {{ item.score }}
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="content-section">
+
+    <div class="section-title">
+      <p class="eyebrow">WHAT I WORK WITH</p>
+      <h2>Technical Skills</h2>
+      <p>
+        Technologies and concepts I have learned and practised
+        through coursework and projects.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+
+      <article
+        class="skill-card"
+        *ngFor="let group of skillGroups">
+
+        <div class="skill-card-header">
+          <span class="skill-number">{{ group.icon }}</span>
+          <h3>{{ group.category }}</h3>
+        </div>
+
+        <div class="skill-tags">
+          <span *ngFor="let skill of group.skills">
+            {{ skill }}
+          </span>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- Interests -->
+  <section class="content-section interests-section">
+
+    <div class="section-title">
+      <p class="eyebrow">WHAT DRIVES ME</p>
+      <h2>Areas of Interest</h2>
+    </div>
+
+    <div class="interests-grid">
+
+      <article
+        class="interest-card"
+        *ngFor="let interest of interests">
+
+        <div class="interest-icon">✦</div>
+
+        <h3>{{ interest.title }}</h3>
+
+        <p>{{ interest.description }}</p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+</section>
