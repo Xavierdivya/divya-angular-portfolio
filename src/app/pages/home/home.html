@@ -1,1 +1,152 @@
-<p>home works!</p>
+
+<section class="hero-section">
+
+  <div class="hero-container">
+
+    <!-- Left: Introduction -->
+    <div class="hero-content">
+
+      <div class="availability">
+        <span class="status-dot"></span>
+        Open to learning and opportunities
+      </div>
+
+      <p class="intro-label">HELLO, I'M</p>
+
+      <h1>
+        {{ name }}
+        <span class="gradient-text">.</span>
+      </h1>
+
+      <h2>
+        Aspiring
+        <span class="gradient-text">Software Developer</span>
+      </h2>
+
+      <p class="hero-description">
+        {{ introduction }}
+      </p>
+
+      <!-- Skills -->
+      <div class="skill-list">
+        <span *ngFor="let skill of skills">
+          {{ skill }}
+        </span>
+      </div>
+
+      <!-- Buttons -->
+      <div class="hero-buttons">
+
+        <a routerLink="/projects" class="btn-primary">
+          Explore My Work
+          <span>↗</span>
+        </a>
+
+        <a routerLink="/contact" class="btn-secondary">
+          Contact Me
+        </a>
+
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+
+        <span>Connect with me</span>
+
+        <a
+          *ngFor="let social of socialLinks"
+          [href]="social.url"
+          target="_blank"
+          rel="noopener noreferrer">
+          {{ social.name }} ↗
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Right: Profile Card -->
+    <div class="hero-visual">
+
+      <div class="gradient-orb orb-one"></div>
+      <div class="gradient-orb orb-two"></div>
+
+      <div class="profile-card">
+
+        <div class="card-top">
+          <span class="card-indicator"></span>
+          <span>DEVELOPER PROFILE</span>
+        </div>
+
+        <div class="profile-avatar">
+          DX
+        </div>
+
+        <h3>Divya X</h3>
+
+        <p class="profile-role">
+          Computer Science Engineer
+        </p>
+
+        <div class="profile-divider"></div>
+
+        <div class="profile-info">
+          <span>Location</span>
+          <strong>India</strong>
+        </div>
+
+        <div class="profile-info">
+          <span>Education</span>
+          <strong>B.E. Computer Science</strong>
+        </div>
+
+        <div class="profile-info">
+          <span>Graduation</span>
+          <strong>2027</strong>
+        </div>
+
+        <div class="code-decoration">
+          <span>&lt;</span> Building ideas
+          <span>/&gt;</span>
+        </div>
+
+      </div>
+
+      <div class="floating-badge badge-top">
+        <span>✦</span>
+        Problem Solver
+      </div>
+
+      <div class="floating-badge badge-bottom">
+        <span>⌘</span>
+        Java Developer
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Highlights -->
+<section class="highlights-section">
+
+  <div class="section-heading">
+    <p>MY JOURNEY SO FAR</p>
+    <h2>Learning. Building. Growing.</h2>
+  </div>
+
+  <div class="highlights-grid">
+
+    <div
+      class="highlight-card"
+      *ngFor="let item of highlights">
+
+      <h3>{{ item.value }}</h3>
+      <p>{{ item.label }}</p>
+
+    </div>
+
+  </div>
+
+</section>
