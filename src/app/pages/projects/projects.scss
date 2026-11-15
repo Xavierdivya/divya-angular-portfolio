@@ -1,0 +1,153 @@
+.projects-page {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+  padding: 85px 0;
+}
+
+.page-heading {
+  max-width: 650px;
+  margin: 0 auto 55px;
+  text-align: center;
+
+  h1 {
+    margin: 14px 0;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+
+    span {
+      background: var(--gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+
+  p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+}
+
+.section-label {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.project-details {
+  margin-top: 45px;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  background: var(--card-bg);
+
+  h2 {
+    margin: 10px 0;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+  }
+
+  p {
+    margin: 15px 0;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  h3 {
+    margin: 20px 0 12px;
+    color: var(--text-primary);
+  }
+}
+
+.details-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.close-button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  span {
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: rgba(114, 87, 232, 0.1);
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
+}
+
+.repository-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.github-cta {
+  margin-top: 65px;
+  padding: 40px 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: var(--card-bg);
+  text-align: center;
+
+  h2 {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+  }
+
+  p {
+    margin-bottom: 22px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  a {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 9px;
+    background: var(--gradient);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .projects-page {
+    padding: 60px 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-details {
+    padding: 22px;
+  }
+}

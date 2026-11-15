@@ -1,1 +1,67 @@
-<p>projects works!</p>
+<section class="projects-page">
+
+  <div class="page-heading">
+    <span class="section-label">MY WORK</span>
+    <h1>Projects I've <span>Built</span></h1>
+    <p>
+      A collection of projects where I apply programming concepts,
+      explore technologies, and solve practical problems.
+    </p>
+  </div>
+
+  <div class="projects-grid">
+    <app-project-card
+      *ngFor="let project of projects"
+      [project]="project"
+      (projectSelected)="showProjectDetails($event)">
+    </app-project-card>
+  </div>
+
+  <section *ngIf="selectedProject" class="project-details">
+    <div class="details-heading">
+      <div>
+        <span class="section-label">PROJECT OVERVIEW</span>
+        <h2>{{ selectedProject.title }}</h2>
+      </div>
+
+      <button
+        type="button"
+        class="close-button"
+        (click)="closeProjectDetails()"
+        aria-label="Close project details">
+        ×
+      </button>
+    </div>
+
+    <p>{{ selectedProject.description }}</p>
+
+    <h3>Technologies Used</h3>
+
+    <div class="technology-list">
+      <span *ngFor="let technology of selectedProject.technologies">
+        {{ technology }}
+      </span>
+    </div>
+
+    <a
+      *ngIf="selectedProject.githubUrl"
+      [href]="selectedProject.githubUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="repository-link">
+      View Source Code on GitHub ↗
+    </a>
+  </section>
+
+  <div class="github-cta">
+    <h2>Want to explore more?</h2>
+    <p>Visit my GitHub profile to see my code and other development work.</p>
+    <a
+      href="https://github.com/Xavierdivya"
+      target="_blank"
+      rel="noopener noreferrer">
+      Explore GitHub ↗
+    </a>
+  </div>
+
+</section>
